@@ -260,6 +260,68 @@ footer a {
   <p>Advertising placements and prices are subject to agreement.</p>
 </section>
 
+<section id="advertiser" style="padding:45px 6%;background:#eaf6ff;text-align:center;">
+  <h2 style="color:#0066cc;">Advertise Your Business With Us</h2>
+
+  <p>Promote your products and services to people visiting FJ Water.</p>
+
+  <form id="advertiserForm" style="max-width:500px;margin:25px auto;background:white;padding:22px;border-radius:12px;">
+
+    <input id="businessName" type="text" placeholder="Business Name" required
+    style="width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+
+    <input id="ownerName" type="text" placeholder="Your Name" required
+    style="width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+
+    <input id="businessPhone" type="tel" placeholder="Your WhatsApp Number" required
+    style="width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+
+    <select id="advertType" required
+    style="width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:6px;">
+      <option value="">Choose Advertisement Type</option>
+      <option>Product Advertisement</option>
+      <option>Business Promotion</option>
+      <option>Services Advertisement</option>
+      <option>Event Promotion</option>
+    </select>
+
+    <textarea id="advertDescription" placeholder="Describe your business or advertisement" required
+    style="width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:6px;height:110px;"></textarea>
+
+    <button type="submit"
+    style="width:100%;padding:15px;background:#0066cc;color:white;border:0;border-radius:7px;font-size:16px;font-weight:bold;">
+      Submit Advertising Request
+    </button>
+  </form>
+
+  <p style="font-size:13px;">Your request will be sent to FJ Water for review.</p>
+</section>
+
+<script>
+document.getElementById("advertiserForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const business = document.getElementById("businessName").value;
+  const owner = document.getElementById("ownerName").value;
+  const phone = document.getElementById("businessPhone").value;
+  const type = document.getElementById("advertType").value;
+  const description = document.getElementById("advertDescription").value;
+
+  const message =
+    "NEW ADVERTISING REQUEST - FJ WATER\n\n" +
+    "Business: " + business + "\n" +
+    "Contact Person: " + owner + "\n" +
+    "WhatsApp: " + phone + "\n" +
+    "Advertisement Type: " + type + "\n" +
+    "Description: " + description;
+
+  window.open(
+    "https://wa.me/233537487181?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+});
+</script>
+
 <section id="contact" class="contact">
   <h2>Contact FJ Water</h2>
   <p>FJ Logistics Ventures</p>
